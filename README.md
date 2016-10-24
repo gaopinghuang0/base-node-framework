@@ -35,8 +35,8 @@ alias bower="node_modules/.bin/bower"
 ```
 
 ### Other issues
-If some tools cannot be installed globally, such Sass.
-```
+In case some tools cannot be installed globally, such Sass, then install locally
+```shell
 gem install -n /path/to/sass sass
 # For example: gem install -n ~/.sass sass
 ```

@@ -52,4 +52,4 @@ require('./server/routes')(app)
 app.locals.moment = require('moment')
 app.listen(port)
 
-console.log('server started on port ' + port)
+console.log('server started on port ' + port + ' in ' + env + ' mode');

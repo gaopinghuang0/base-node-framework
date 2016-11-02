@@ -34,6 +34,14 @@ alias grunt="node_modules/.bin/grunt"
 alias bower="node_modules/.bin/bower"
 ```
 
+### Reset to a git tag
+```shell
+git tag   # list tag_name, e.g., v0.1, ...
+# http://stackoverflow.com/questions/6872223/how-do-i-revert-master-branch-to-a-tag-in-git
+git checkout master
+git reset --hard tag_name
+```
+
 ### Other issues
 In case some tools cannot be installed globally, such Sass, then install locally
 ```shell

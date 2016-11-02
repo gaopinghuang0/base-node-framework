@@ -46,6 +46,12 @@ if (env === 'development') {
 	mongoose.set('debug', true)
 }
 
+// set url_prefix when running on remote server 
+app.locals.url_for = function(url) {
+    var url_prefix = env === 'production' ? '/' + (''+port).slice(2) : '';
+    return url_prefix + url;
+}
+
 // all routes
 require('./server/routes')(app)
 

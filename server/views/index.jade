@@ -4,6 +4,9 @@ block content
     h1 Hello world
     div
         img(src='#{url_for("/images/github-octocat.png")}' alt="github-octocat" width=400)
+
+    include ./partials/main_form
+    
 block scripts
   // highlight.js
   script(src='#{url_for("/js/helper.js")}')

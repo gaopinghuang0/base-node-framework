@@ -1,5 +1,6 @@
 // get all controllers
-var Index = require('./controllers/index')
+var Index = require('./controllers/index');
+var AMT = require('./controllers/AMT');
 
 
 module.exports = function(app) {
@@ -14,6 +15,7 @@ module.exports = function(app) {
 	// })
 
 	// Index
-	app.get('/', Index.index)
+    // Add AMT.parseInfo for each GET request, not for ajax call
+	app.get('/', AMT.parseInfo, Index.index);
 
 }

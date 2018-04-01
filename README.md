@@ -21,12 +21,12 @@ git reset --hard tag_name
 ### Install
 ```bash
 npm install  #back-end
+npm install -g grunt-cli   # grunt command line
 bower install  #front-end
 ```
 
 ### Run
 ```shell
-npm install -g grunt-cli
 mongod
 grunt
 ```

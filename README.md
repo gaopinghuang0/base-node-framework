@@ -1,4 +1,4 @@
-## Welcome to base-node-framework
+## base-node-framework
 Minimum Nodejs template with auto-reload. Built on the MEAN stack.
 
 ### Tech Stack
@@ -11,6 +11,8 @@ Minimum Nodejs template with auto-reload. Built on the MEAN stack.
 
 
 ### Reset to a git tag
+Here, tags are used to represent several versions with different features (e.g., supporting Amazon MTurk).
+Choose a proper tag and jump to it.
 ```bash
 $ git tag   # list tag_name, e.g., v0.1, ...
 # see http://stackoverflow.com/questions/6872223/how-do-i-revert-master-branch-to-a-tag-in-git

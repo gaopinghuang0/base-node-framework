@@ -13,12 +13,6 @@ html
 		include ./partials/head
 	body
 		block content
-		footer Copyright &copy; 2016
+		footer Copyright &copy; 2018
 		
-		script
-			if amt_hit
-				| // Global variables
-				| var Helper = window.Helper = window.Helper || {};
-				| Helper.task_id = #{amt_hit.task_id};
-				| Helper.worker_id = "#{amt_hit.worker_id}";
 		block scripts

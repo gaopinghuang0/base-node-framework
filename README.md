@@ -2,55 +2,41 @@
 Minimum Nodejs template with auto-reload. Built on the MEAN stack.
 
 ### Tech Stack
-- MEAN stack (MongoDB, Express, Angularjs, Nodejs)
-- Jade template
+- Express
+- Pug template
 - SASS
-- jQuery
-- Bootstrap
 - Grunt
+- Bower
 
-
-### Reset to a git tag
-Here, tags are used to represent several versions with different features (e.g., supporting Amazon MTurk).
-Choose a proper tag and jump to it.
-```bash
-$ git tag   # list tag_name, e.g., v0.1, ...
-# see http://stackoverflow.com/questions/6872223/how-do-i-revert-master-branch-to-a-tag-in-git
-$ git checkout master
-$ git reset --hard tag_name
-```
-
-### Install
+### Getting Started
+#### Install
 ```bash
 $ npm install   # back-end
 $ npm install -g grunt-cli   # grunt command line
 $ bower install   # front-end
 ```
 
-### Run
+#### Run
 ```bash
-$ mongod  # OR: mongod -f mongod.conf
 $ grunt
 ```
 
-### Permission Issues
-On remote server with no write permission, just install bower and grunt-cli locally
+### Installation Issues, e.g., Permission Error
+
+#### Nodejs and npm
+
+Just install `nvm`, which is a lifesaver for me. See https://github.com/creationix/nvm.
+
+It supports multiple versions of Node and `npm`. Also, the `npm` installed in this way can support `npm install -g pkg`, without worrying about the permission.
+
+#### Sass
+Some tools cannot be installed globally, such as Sass, then install locally
 ```bash
-$ npm install bower grunt-cli
+# credit: https://stackoverflow.com/a/38259128
+gem install sass --user-install
+# Add the path to .bashrc
+export PATH="$HOME/.gem/ruby/2.0.0/bin:$PATH"
 ```
 
-Then add alias in `.bashrc` or `.bash_profile`
-```
-alias grunt="node_modules/.bin/grunt"
-alias bower="node_modules/.bin/bower"
-```
-
-Similarly, some tools cannot be installed globally, such Sass, then install locally
-```bash
-$ gem install -n /path/to/sass sass
-# For example: gem install -n ~/.sass sass
-```
-Then add PATH in `.bashrc`
-```
-export PATH=$HOME/.sass:/usr/local/bin:$PATH
-```
+### Bugs
+1. On network drive, the `npm install --save` does not update package.json. See [Network install error: "ENOTSUP: operation not supported on socket, fsync"](https://github.com/npm/npm/issues/17066).

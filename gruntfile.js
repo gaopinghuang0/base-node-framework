@@ -4,7 +4,7 @@ module.exports = function(grunt) {
 
 	grunt.initConfig({
 		watch: {
-			jade: {
+			pug: {
 				files: ['server/views/**'],
 				options: {
 					livereload: true
@@ -17,7 +17,7 @@ module.exports = function(grunt) {
 					livereload: true
 				}
 			},
-			css: {
+			sass: {
 				files: ['public/sass/*.scss'],
 				tasks: ['sass'],
 				options: {

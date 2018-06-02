@@ -28,3 +28,5 @@ node_modules
 public/libs/
 
 .sass-cache
+
+.DS_Store

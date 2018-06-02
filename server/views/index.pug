@@ -1,0 +1,11 @@
+extends layout
+
+block content
+    h1 Hello world
+    div
+        img(src=url_for("/images/github-octocat.png") alt="github-octocat" width=400)
+
+block scripts
+  // all .js
+  script(src=url_for("/js/helper.js"))
+  script(src=url_for("/js/index.js"))

@@ -27,7 +27,8 @@ module.exports = function(grunt) {
                     'client/dist/js/client.js': 'client/src/es6/client.js'
                 },
                 options: {
-                    transform: ['babelify']
+                    // see: https://stackoverflow.com/a/41100748
+                    transform: [['babelify', { presets: "env" }]]
                 }
             }
         },

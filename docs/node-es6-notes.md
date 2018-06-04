@@ -4,7 +4,7 @@
 ### My current way to support ES6 on Nodejs
 * For node server, use `import` but the modules should be named as `*.mjs`. The option `--experimental-modules` should also be enabled. 
 * For client, use babel and browserify to transform to ES5. See these posts: 
-    * [Using Babel + grunt to work with ES6](https://stackoverflow.com/a/41100748)
+    * [Using Babel + grunt to work with ES6](https://stackoverflow.com/a/41100748) from StackOverflow
     * [Setting up Babel 6](https://babeljs.io/blog/2015/10/31/setting-up-babel-6), especially about `babel-preset-env`.
     * [grunt-browserify examples](https://github.com/jmreidy/grunt-browserify/tree/master/examples)
 

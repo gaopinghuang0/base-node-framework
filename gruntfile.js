@@ -5,35 +5,22 @@ module.exports = function(grunt) {
     grunt.initConfig({
 
         watch: {
-            options: {
-                livereload: true,
-            },
-            pug: {
-                files: ['server/views/**'],
+            livereload: {
+                options: { livereload: true },
+                // reload if client/dist/ and server/ changes, not reload on client/src/
+                files: ['client/dist/**/*', 'server/**/*'],
             },
             es6: {
-                options: {
-                    livereload: false
-                },
-                files: ['client/src/**/*.js'],
+                files: ['client/src/es6/*.js'],
                 tasks: ['browserify:dist']
             },
-            js: {
-                files: ['client/dist/js/*.js'],
-            },
             sass: {
-                options: {
-                    livereload: false
-                },
                 files: ['client/src/sass/*.scss'],
                 tasks: ['sass'],
             },
-            css: {
-                files: ['client/dist/css/*.css'],
-            }
         },
 
-        browserify: {  // task run after watched file changes
+        browserify: {  // run task if watching file changes
             dist: {
                 // see: https://github.com/jmreidy/grunt-browserify/tree/master/examples
                 files: {
@@ -45,7 +32,7 @@ module.exports = function(grunt) {
             }
         },
 
-        sass: {  // task run after watched file changes
+        sass: {  // run task if watching file changes
             dist: {
                 options: {
                     style: 'expanded'
@@ -67,9 +54,7 @@ module.exports = function(grunt) {
                             console.log(event.colour);
                         });
                     },
-                    env: {
-                        PORT: config.PORT
-                    },
+                    env: { PORT: config.PORT },
                     cwd: __dirname,
                     ignore: ['node_modules/**', 'README.md', '.DS_Store'],
                     ext: 'js,mjs,coffee',

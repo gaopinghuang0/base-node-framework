@@ -1,12 +1,12 @@
-## base-node-framework
-Minimum Nodejs template with auto-reload. Built on the MEAN stack.
+## basic-node-boilerplate
+Minimum Nodejs boilerplate with auto-reload.
 
 ### Tech Stack
 - Express
 - Pug template
 - SASS
+- ES6 (important notes: [node es6](./docs/node-es6-notes.md))
 - Grunt
-- Bower
 
 ### Getting Started
 #### Install

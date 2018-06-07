@@ -1,7 +1,7 @@
 {
   "name": "basic-node-boilerplate",
-  "version": "0.0.1",
-  "main": "server.js",
+  "version": "0.2.0",
+  "main": "server.mjs",
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
@@ -21,21 +21,21 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "NODE_ENV=production node server.js"
+    "start": "NODE_ENV=production node --experimental-modules server.mjs"
   },
   "author": "gaopinghuang0",
   "license": "MIT",
   "description": "basic-node-boilerplate",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gaopinghuang0/base-node-framework.git"
+    "url": "https://github.com/gaopinghuang0/basic-node-boilerplate"
   },
   "keywords": [
     "node",
     "framework"
   ],
   "bugs": {
-    "url": "https://github.com/gaopinghuang0/base-node-framework/issues"
+    "url": "https://github.com/gaopinghuang0/basic-node-boilerplate/issues"
   },
-  "homepage": "https://github.com/gaopinghuang0/base-node-framework#readme"
+  "homepage": "https://github.com/gaopinghuang0/basic-node-boilerplate#readme"
 }

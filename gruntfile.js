@@ -24,7 +24,8 @@ module.exports = function(grunt) {
             dist: {
                 // see: https://github.com/jmreidy/grunt-browserify/tree/master/examples
                 files: {
-                    'client/dist/js/client.js': 'client/src/es6/client.js'
+                    'client/dist/js/app.js': 'client/src/es6/app.js',
+                    // 'client/dist/js/app2.js': 'client/src/es6/app2.js',  // add multiple output files
                 },
                 options: {
                     // see: https://stackoverflow.com/a/41100748
@@ -67,7 +68,7 @@ module.exports = function(grunt) {
         },
 
         concurrent: {
-            tasks: ['nodemon', 'watch'],  // tasks run on startup
+            tasks: ['nodemon', 'watch', 'sass', 'browserify:dist'],  // tasks run on startup
             options: {
                 logConcurrentOutput: true
             }

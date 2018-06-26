@@ -1,10 +1,11 @@
 extends layout
 
 block content
+  main.center
     h1 Hello world
     div
-        img(src=url_for("/imgs/github-octocat.png") alt="github-octocat" width=400)
+      img(src=url_for("/imgs/github-octocat.png") alt="github-octocat" width=400)
 
 block scripts
   // all .js
-  script(src=url_for("/js/client.js"))
+  script(src=url_for("/dist/js/client.js"))

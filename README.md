@@ -9,16 +9,34 @@ Minimum Nodejs boilerplate with auto-reload.
 - Grunt
 
 ### Getting Started
-#### Install
+#### Install dependencies
 ```bash
 $ npm install -g grunt-cli yarn  # grunt and yarn if not installed before
 $ yarn install   # the packages can also be used in client code via import
 ```
 
 #### Run
-```bash
-$ grunt
+For development
+```sh
+grunt
 ```
+For production
+```sh
+yarn build  # OR: npm run build
+yarn start  # OR: npm start
+# OR use `forever`
+forever start -c "yarn start" ./
+```
+
+#### Restart
+```sh
+# forever list
+forever stop 0
+ps aux | grep node
+kill <pid1> <pid2>
+forever start -c "yarn start" ./
+```
+
 
 ### Installation Issues, e.g., Permission Error
 

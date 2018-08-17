@@ -11,7 +11,7 @@ Minimum Nodejs boilerplate with auto-reload.
 ### Getting Started
 #### Install dependencies
 ```bash
-$ npm install -g grunt-cli yarn  # grunt and yarn if not installed before
+$ npm install -g grunt-cli yarn  # install grunt and yarn if not installed before
 $ yarn install   # the packages can also be used in client code via import
 ```
 

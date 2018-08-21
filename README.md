@@ -1,11 +1,14 @@
 ## basic-node-boilerplate
 Minimum Nodejs boilerplate with auto-reload.
 
+This particular branch `grunt-redux` is for grunt + react-redux. Also, it contains source code from an example: [TODO List](https://redux.js.org/basics/exampletodolist) from Redux. The code structure is similar to [CodePen TODO List](https://codesandbox.io/s/github/reduxjs/redux/tree/master/examples/todos)
+
 ### Tech Stack
 - Express
 - Pug template
 - SASS
 - ES6 (important notes: [node es6](./docs/node-es6-notes.md))
+- **React-Redux**
 - Grunt
 
 ### Getting Started

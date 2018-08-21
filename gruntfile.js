@@ -11,11 +11,11 @@ module.exports = function(grunt) {
                 files: ['client/dist/**/*', 'server/**/*'],
             },
             es6: {
-                files: ['client/src/es6/*.js'],
+                files: ['client/src/**/*.js'],
                 tasks: ['browserify:dist']
             },
             sass: {
-                files: ['client/src/sass/*.scss'],
+                files: ['client/sass/*.scss'],
                 tasks: ['sass'],
             },
         },
@@ -24,12 +24,12 @@ module.exports = function(grunt) {
             dist: {
                 // see: https://github.com/jmreidy/grunt-browserify/tree/master/examples
                 files: {
-                    'client/dist/js/app.js': 'client/src/es6/app.js',
-                    // 'client/dist/js/app2.js': 'client/src/es6/app2.js',  // add multiple output files
+                    'client/dist/js/index.bundle.js': 'client/src/index.js',
+                    // 'client/dist/js/todo.bundle.js': 'client/src/es6/todo.js',  // add multiple output files
                 },
                 options: {
                     // see: https://stackoverflow.com/a/41100748
-                    transform: [['babelify', { presets: "env" }]]
+                    transform: [['babelify', { presets: ["@babel/preset-env", "@babel/preset-react"] }]]
                 }
             }
         },
@@ -40,7 +40,7 @@ module.exports = function(grunt) {
                     style: 'expanded'
                 },
                 files: {
-                    'client/dist/css/style.css': 'client/src/sass/style.scss'
+                    'client/dist/css/style.css': 'client/sass/style.scss'
                 }
             }
         },

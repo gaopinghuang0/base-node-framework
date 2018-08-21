@@ -1,4 +1,13 @@
-var config = require('./server/config/config')
+const config = require('./server/config/config')
+
+// move the common config of browserify in development and production mode here
+const browserifyConfig = {
+    files: {
+        'client/dist/js/index.bundle.js': 'client/src/index.js',
+        // 'client/dist/js/todo.bundle.js': 'client/src/es6/todo.js',  // add multiple output files
+    },
+    transform: [['babelify', { presets: ["@babel/preset-env", "@babel/preset-react"] }]]
+}
 
 module.exports = function(grunt) {
 
@@ -12,7 +21,7 @@ module.exports = function(grunt) {
             },
             es6: {
                 files: ['client/src/**/*.js'],
-                tasks: ['browserify:dist']
+                tasks: ['browserify:dev']
             },
             sass: {
                 files: ['client/sass/*.scss'],
@@ -21,15 +30,23 @@ module.exports = function(grunt) {
         },
 
         browserify: {  // run task if watching file changes
-            dist: {
+            prod: { // production mode, debug is false
                 // see: https://github.com/jmreidy/grunt-browserify/tree/master/examples
-                files: {
-                    'client/dist/js/index.bundle.js': 'client/src/index.js',
-                    // 'client/dist/js/todo.bundle.js': 'client/src/es6/todo.js',  // add multiple output files
-                },
+                files: browserifyConfig.files,
                 options: {
                     // see: https://stackoverflow.com/a/41100748
-                    transform: [['babelify', { presets: ["@babel/preset-env", "@babel/preset-react"] }]]
+                    transform: browserifyConfig.transform
+                }
+            },
+            dev: {  // development, debug is true
+                // see: https://github.com/jmreidy/grunt-browserify/tree/master/examples
+                files: browserifyConfig.files,
+                options: {
+                    browserifyOptions: {
+                        debug: true
+                    },
+                    // see: https://stackoverflow.com/a/41100748
+                    transform: browserifyConfig.transform,
                 }
             }
         },
@@ -68,7 +85,7 @@ module.exports = function(grunt) {
         },
 
         concurrent: {
-            tasks: ['nodemon', 'watch', 'sass', 'browserify:dist'],  // tasks run on startup
+            tasks: ['nodemon', 'watch', 'sass', 'browserify:dev'],  // tasks run on startup
             options: {
                 logConcurrentOutput: true
             }

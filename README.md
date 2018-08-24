@@ -12,6 +12,7 @@ This particular branch `grunt-redux` is for grunt + react-redux. Also, it contai
 - Grunt
 
 ### Getting Started
+[Install Nodejs, npm and sass](./docs/installation-issues.md)
 #### Install dependencies
 ```bash
 $ npm install -g grunt-cli yarn  # grunt and yarn if not installed before
@@ -38,24 +39,6 @@ forever stop 0
 ps aux | grep node
 kill <pid1> <pid2>
 forever start -c "yarn start" ./
-```
-
-
-### Installation Issues, e.g., Permission Error
-
-#### Nodejs and npm
-
-Just install `nvm`, which is a lifesaver for me. See https://github.com/creationix/nvm.
-
-It supports multiple versions of Node and `npm`. Also, the `npm` installed in this way can support `npm install -g pkg`, without worrying about the permission.
-
-#### Sass
-Some tools cannot be installed globally, such as Sass, then install locally
-```bash
-# credit: https://stackoverflow.com/a/38259128
-gem install sass --user-install
-# Add the path to .bashrc
-export PATH="$HOME/.gem/ruby/2.0.0/bin:$PATH"
 ```
 
 ### Bugs
